@@ -1,0 +1,4 @@
+User-agent:NinjaBot
+    Disallow: /
+User-agent: *
+    Disallow:/

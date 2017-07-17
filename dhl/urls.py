@@ -66,6 +66,7 @@ urlpatterns = [
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     #url(r'^tickets/', include('tickets.urls', namespace='tickets')),
     url(r'^tracking/', include('track.urls')),
+    url(r'^dhlavenues/', include('webhook.urls')),
     url(r'^$', RedirectView.as_view(url='/blog/')),
 ]
 

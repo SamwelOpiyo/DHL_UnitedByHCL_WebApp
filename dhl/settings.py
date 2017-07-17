@@ -146,6 +146,7 @@ INSTALLED_APPS = [
 
     #'mysite.apps.MysiteConfig',
     'track.apps.TrackConfig',
+    'webhook.apps.WebhookConfig',
 ]
 
 MIDDLEWARE = [

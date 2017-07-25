@@ -1,0 +1,25 @@
+{
+    "name": "DHL Avenues Web App",
+    "description": "Web App Supporting Messenger Chatbot for UnitedByHcl Hackathon on the theme Artificial Inteligence Challenge 3 : Create an Assistive Chatbot – For DHL Develop a chatbot to help simplify some of the DHL’s user centric problems.",
+    "repository": "https://github.com/Avenues3/DHL_UnitedByHCL_WebApp",
+    "keywords": ["django", "channels", "python", "DHL Avenues"],
+    "scripts": {
+        "postdeploy": "python manage.py migrate"
+    },
+    "env": {
+        "SECRET_KEY": {
+            "description": "Django's SECRET_KEY setting",
+            "generator": "secret"
+        }
+    },
+    "formation": {
+        "web": {
+            "quantity": 1,
+          " size": "Free"
+        },
+        "worker": {
+            "quantity": 1,
+            "size": "Free"
+        }
+    }
+}

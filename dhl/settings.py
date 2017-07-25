@@ -61,7 +61,6 @@ INSTALLED_APPS = [
     #'zinnia_html5',
     #'zinnia_threaded_comments',
     'zinnia',
-    'gunicorn',
     'admin_tools',
     'admin_tools.theming',
     'admin_tools.menu',

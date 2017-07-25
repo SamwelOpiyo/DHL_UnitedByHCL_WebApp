@@ -72,3 +72,10 @@ class messenger(generic.View):
                     status = requests.post(post_message_url, headers={"Content-Type": "application/json"},data=response_msg)
                     pprint(status.json())
         return HttpResponse()
+
+
+
+
+
+
+

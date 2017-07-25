@@ -12,6 +12,7 @@
             "generator": "secret"
         }
     },
+    "addons": [],
     "formation": {
         "web": {
             "quantity": 1,
@@ -23,3 +24,4 @@
         }
     }
 }
+

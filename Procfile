@@ -1,1 +1,1 @@
-worker: python manage.py runworker -v2
+web: gunicorn dhl.wsgi --log-file -

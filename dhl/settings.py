@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+import random
+import string
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,12 +22,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '8vp393)6p6y-$)!psi#)dm$2s9$%e6+2ayk!5vy=k4c4q^rwe0'
+#SECRET_KEY = '8vp393)6p6y-$)!psi#)dm$2s9$%e6+2ayk!5vy=k4c4q^rwe0'
+SECRET_KEY = os.environ.get("SECRET_KEY", "".join(random.choice(string.printable) for i in range(40)))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'dhlavenues.herokuapp.com',]
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'dhlavenues.herokuapp.com','.herokuapp.com']
 
 
 # Application definition
@@ -50,6 +53,7 @@ INSTALLED_APPS = [
     'tagging',
     'django_comments',
     'mptt',
+    'channels',
     #'tickets',
     'sorl.thumbnail',
     #'zinnia_foundation',
@@ -185,6 +189,15 @@ TEMPLATES = [
     },
 ]
 
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "asgi_redis.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [os.environ.get('REDIS_URL', 'redis://151.80.56.184:6379')],
+        },
+        "ROUTING": "webhook.routing.channel_routing",
+    },
+}
 
 
 

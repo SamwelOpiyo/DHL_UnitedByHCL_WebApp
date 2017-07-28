@@ -18,25 +18,6 @@ from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 
 
-import bs4
-import requests
-
-'''
-def scrap_image(key):
-    res = requests.get('https://duckduckgo.com/' + key + '?iax=1&ia=images&iaf=size%3Al')
-    r = bs4.BeautifulSoup(res.text)
-    import itertools
-
-    def trios(seq):
-         is1 = itertools.islice(iter(seq), 0, None, 3)
-         is2 = itertools.islice(iter(seq), 1, None, 3)
-         return itertools.izip(is1, is2)
-
-    s = [r.select('.data_wide_table tr td')[td].getText() for td in range(len(r.select('.data_wide_table tr td')))]
-    for x, y in trios(s):
-        print x,y
-
-'''
 class messenger(generic.View):
     def get(self, request, *args, **kwargs):
         if self.request.GET['hub.verify_token'] == 'avenues3':
@@ -67,8 +48,15 @@ class messenger(generic.View):
                         reply = "Parrot:\n" + message["message"]["text"].encode("utf-8")
 
                     
-                    post_message_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=%s'%'EAABqdFKpfcoBAIVS1oAWcZCiyalYN7aN5uLcdZA2V2xnawa8BD0GlI0LI7Sv9ZBuzZBvvZALF3QjpGUgjdEVbzyAZCDuezFFZAk1qs42PoxBTrXkgfJpKFWJrnpcecmPy6Ej4ZBvVjKdTM71LIhwgIOfSWtgk1zLPblyZA1lGFqjH91xNyZADndpU6ZB3sPzMWvVZAoZD'
+                    post_message_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=%s'%'EAAULqvC7u8cBAMZBZAplMhGuPbYWjuCkDqxxeF2Vm7ozfL1uZClrhXvVxMh5JY1DlFK8jNlBbZAVtf8D2Qsry8cBQFNWZANgzaZB2z769rSIkXtkTCnJ83aK6JsBxLSulmC2OAOdQ3qJZCWnC2pjLiN5pnVHVZCZBSVbktU5HG3OARAZDZD'
                     response_msg = json.dumps({"recipient":{"id":message['sender']['id']}, "message":{"text":reply}})
                     status = requests.post(post_message_url, headers={"Content-Type": "application/json"},data=response_msg)
                     pprint(status.json())
         return HttpResponse()
+
+
+
+
+
+
+

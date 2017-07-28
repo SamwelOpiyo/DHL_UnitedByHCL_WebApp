@@ -85,7 +85,7 @@ urlpatterns += [
     url(r'^sitemap-(?P<section>.+)\.xml$', contribSitemaps.sitemap, {'sitemaps': sitemaps}),
     url(r'^xmlrpc/$', django_xmlrpc.handle_xmlrpc),
     url(r'^blog/$', EntryChannel.as_view(query='category:python OR category:django')),
-    url(r'^blog/', include('zinnia.urls', namespace='zinnia')),
+    url(r'^blog/', include('zinnia.urls', namespace='blog')),
 ]
 
 

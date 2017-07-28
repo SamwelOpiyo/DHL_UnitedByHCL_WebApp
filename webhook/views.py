@@ -41,9 +41,9 @@ class messenger(generic.View):
                 # This might be delivery, optin, postback for other events
                 if 'message' in message:
                     if 'Hello' in message["message"]["text"].encode("utf-8"):
-                        reply = "Hello, Hope you are doing great! Type a name of an agricultural commodity to know its price in Kenya eg 'Carrots'."
+                        reply = "Hello, Hope you are doing great!"
                     elif 'Hi' in message["message"]["text"].encode("utf-8"):
-                        reply = "Hi, Hope you are doing great! Type a name of an agricultural commodity to know its price in Kenya eg 'Carrots'."
+                        reply = "Hi, Hope you are doing great!"
                     else:
                         reply = "Parrot:\n" + message["message"]["text"].encode("utf-8")
 

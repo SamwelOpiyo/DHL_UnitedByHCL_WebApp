@@ -51,7 +51,7 @@ class messenger(generic.View):
                         reply = "Parrot:\n" + message["message"]["text"].encode("utf-8")
 
                     
-                    post_message_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=%s'%'' + FACEBOOK_TOKEN
+                    post_message_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=' + FACEBOOK_TOKEN
                     response_msg = json.dumps({"recipient":{"id":message['sender']['id']}, "message":{"text":reply}})
                     status = requests.post(post_message_url, headers={"Content-Type": "application/json"},data=response_msg)
                     pprint(status.json())

@@ -5,7 +5,13 @@ A dhl python chatbot for Facebook Messenger.
 This is a prototype app for UnitedByHcl Hackathon on the theme Artificial Inteligence Challenge 3 : Create an Assistive Chatbot – For DHL
 Develop a chatbot to help simplify some of the DHL’s user centric problems.
 
-You can visit [my deployment of the example online](https://dhlavenues.herokuapp.com/), or deploy your own copy to Heroku with this button (which requires a free Heroku account):
+You can visit [my deployment of the example online](https://dhlavenues.herokuapp.com/), deploy your own copy to Heroku or run an instance in your local computer.
+
+## Deploying to Heroku
+
+Follow the instructions provided in the [Facebook quickstart tutorial](https://developers.facebook.com/docs/messenger-platform/quickstart) for creating a page and an app.
+
+Deploy your own copy to Heroku with this button (which requires a free Heroku account) and set the `VERIFY_TOKEN` and `FACEBOOK_TOKEN` environment variables to the values you get from following the tutorial.
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/SamwelOpiyo/DHL_UnitedByHCL_WebApp)
 

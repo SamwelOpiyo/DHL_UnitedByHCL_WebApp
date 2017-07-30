@@ -11,6 +11,14 @@
             "description": "Django's SECRET_KEY setting",
             "generator": "secret"
         }
+        "VERIFY_TOKEN": {
+            "description": "Facebook's VERIFY_TOKEN setting",
+            "generator": "secret"
+        }
+        "FACEBOOK_TOKEN": {
+            "description": "Facebooks's FACEBOOK_TOKEN setting",
+            "generator": "secret"
+        }
     },
     "formation": {
         "web": {

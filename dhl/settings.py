@@ -25,9 +25,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 #SECRET_KEY = '8vp393)6p6y-$)!psi#)dm$2s9$%e6+2ayk!5vy=k4c4q^rwe0'
 SECRET_KEY = os.environ.get("SECRET_KEY", "".join(random.choice(string.printable) for i in range(40)))
 
-VERIFY_TOKEN = os.environ.get("VERIFY_TOKEN", "avenues3")
-FACEBOOK_TOKEN = os.environ.get("FACEBOOK_TOKEN", "EAAULqvC7u8cBAMZBZAplMhGuPbYWjuCkDqxxeF2Vm7ozfL1uZClrhXvVxMh5JY1DlFK8jNlBbZAVtf8D2Qsry8cBQFNWZANgzaZB2z769rSIkXtkTCnJ83aK6JsBxLSulmC2OAOdQ3qJZCWnC2pjLiN5pnVHVZCZBSVbktU5HG3OARAZDZD")
-
 
 
 # SECURITY WARNING: don't run with debug turned on in production!

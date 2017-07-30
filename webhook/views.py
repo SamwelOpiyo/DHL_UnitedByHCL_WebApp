@@ -17,10 +17,13 @@ from pprint import pprint
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 
+VERIFY_TOKEN = os.environ.get("VERIFY_TOKEN", "avenues3")
+FACEBOOK_TOKEN = os.environ.get("FACEBOOK_TOKEN", "EAAULqvC7u8cBAMZBZAplMhGuPbYWjuCkDqxxeF2Vm7ozfL1uZClrhXvVxMh5JY1DlFK8jNlBbZAVtf8D2Qsry8cBQFNWZANgzaZB2z769rSIkXtkTCnJ83aK6JsBxLSulmC2OAOdQ3qJZCWnC2pjLiN5pnVHVZCZBSVbktU5HG3OARAZDZD")
+
 
 class messenger(generic.View):
     def get(self, request, *args, **kwargs):
-        if self.request.GET['hub.verify_token'] == 'avenues3':
+        if self.request.GET['hub.verify_token'] == VERIFY_TOKEN:
             return HttpResponse(self.request.GET['hub.challenge'])
         else:
             return HttpResponse('Error, invalid token')
@@ -48,7 +51,7 @@ class messenger(generic.View):
                         reply = "Parrot:\n" + message["message"]["text"].encode("utf-8")
 
                     
-                    post_message_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=%s'%'EAAULqvC7u8cBAMZBZAplMhGuPbYWjuCkDqxxeF2Vm7ozfL1uZClrhXvVxMh5JY1DlFK8jNlBbZAVtf8D2Qsry8cBQFNWZANgzaZB2z769rSIkXtkTCnJ83aK6JsBxLSulmC2OAOdQ3qJZCWnC2pjLiN5pnVHVZCZBSVbktU5HG3OARAZDZD'
+                    post_message_url = 'https://graph.facebook.com/v2.6/me/messages?access_token=%s'%'' + FACEBOOK_TOKEN
                     response_msg = json.dumps({"recipient":{"id":message['sender']['id']}, "message":{"text":reply}})
                     status = requests.post(post_message_url, headers={"Content-Type": "application/json"},data=response_msg)
                     pprint(status.json())

@@ -11,6 +11,14 @@
             "description": "Django's SECRET_KEY setting",
             "generator": "secret"
         }
+        "VERIFY_TOKEN": {
+            "description": "Facebook's VERIFY_TOKEN setting",
+            "value": "avenues3"
+        }
+        "FACEBOOK_TOKEN": {
+            "description": "Facebooks's FACEBOOK_TOKEN setting",
+            "value": "EAAULqvC7u8cBAMZBZAplMhGuPbYWjuCkDqxxeF2Vm7ozfL1uZClrhXvVxMh5JY1DlFK8jNlBbZAVtf8D2Qsry8cBQFNWZANgzaZB2z769rSIkXtkTCnJ83aK6JsBxLSulmC2OAOdQ3qJZCWnC2pjLiN5pnVHVZCZBSVbktU5HG3OARAZDZD"
+        }
     },
     "formation": {
         "web": {
